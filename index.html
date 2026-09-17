@@ -206,13 +206,15 @@
 
     <!-- 3. E-mail -->
     <p>
-        <label for="email">E-mail:</label><br>
-        <input
-                type="email"
-                id="email"
-                name="email"
-                required>
-    </p>
+    <label for="email">E-mail:</label><br>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+        placeholder="example@mail.ru"
+        required>
+</p>
 
     <!-- 4. Дата рождения -->
     <p>
