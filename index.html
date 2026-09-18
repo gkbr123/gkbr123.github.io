@@ -186,32 +186,39 @@
     <p>
         <label for="fullname">ФИО:</label><br>
         <input
-                type="text"
-                id="fullname"
-                name="fullname"
-                required>
+    type="text"
+    id="fullname"
+    name="fullname"
+    pattern="[А-Яа-яЁё]+ [А-Яа-яЁё]+ [А-Яа-яЁё]+"
+    title="Введите Фамилию Имя Отчество, например: Иванов Иван Иванович"
+    placeholder="Иванов Иван Иванович"
+    required>
     </p>
 
     <!-- 2. Телефон -->
     <p>
         <label for="phone">Телефон:</label><br>
         <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="+7 (999) 123-45-67">
+    type="tel"
+    id="phone"
+    name="phone"
+    pattern="\+[0-9]{11}"
+    title="Введите номер в формате +79991234567"
+    placeholder="+79991234567"
+    required>
     </p>
 
     <!-- 3. E-mail -->
     <p>
     <label for="email">E-mail:</label><br>
     <input
-        type="email"
-        id="email"
-        name="email"
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-        placeholder="example@mail.ru"
-        required>
+    type="email"
+    id="email"
+    name="email"
+    pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+"
+    title="Введите корректный e-mail, например: example@mail.ru"
+    placeholder="example@mail.ru"
+    required>
 </p>
 
     <!-- 4. Дата рождения -->
