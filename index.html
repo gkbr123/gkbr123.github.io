@@ -223,59 +223,63 @@
 
     <!-- 4. Дата рождения -->
     <p>
-        <label for="birthdate">Дата рождения:</label><br>
-        <input
-                type="date"
-                id="birthdate"
-                name="birthdate">
-    </p>
+    <label for="birthdate">Дата рождения:</label><br>
+    <input
+        type="date"
+        id="birthdate"
+        name="birthdate"
+        required>
+</p>
 
     <!-- 5. Пол -->
     <fieldset>
-        <legend>Пол:</legend>
+    <legend>Пол:</legend>
 
-        <label>
-            <input
-                    type="radio"
-                    name="gender"
-                    value="male">
-            Мужской
-        </label>
+    <label>
+        <input
+            type="radio"
+            name="gender"
+            value="male"
+            required>
+        Мужской
+    </label>
 
-        <label>
-            <input
-                    type="radio"
-                    name="gender"
-                    value="female">
-            Женский
-        </label>
-    </fieldset>
+    <label>
+        <input
+            type="radio"
+            name="gender"
+            value="female">
+        Женский
+    </label>
+</fieldset>
 
     <!-- 6. Любимый язык программирования -->
     <p>
-        <label for="languages">
-            Любимый язык программирования:
-        </label><br>
+    <label for="languages">
+        Любимый язык программирования:
+    </label><br>
 
-        <select
-                id="languages"
-                name="languages[]"
-                multiple
-                size="6">
+    <select
+        id="languages"
+        name="languages[]"
+        multiple
+        size="6"
+        required>
 
-            <option value="Pascal">Pascal</option>
-            <option value="C">C</option>
-            <option value="C++">C++</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="PHP">PHP</option>
-            <option value="Python">Python</option>
-            <option value="Java">Java</option>
-            <option value="Haskell">Haskel</option>
-            <option value="Clojure">Clojure</option>
-            <option value="Prolog">Prolog</option>
-            <option value="Scala">Scala</option>
-        </select>
-    </p>
+        <option value="Pascal">Pascal</option>
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="PHP">PHP</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Haskell">Haskel</option>
+        <option value="Clojure">Clojure</option>
+        <option value="Prolog">Prolog</option>
+        <option value="Scala">Scala</option>
+
+    </select>
+</p>
 
     <!-- 7. Биография -->
     <p>
