@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+.container {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Шапка */
+
+.site-header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+.header-content {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.site-title h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.site-title p {
+    margin: 5px 0 0;
+}
+
+
+/* Меню */
+
+.site-nav {
+    width: 100%;
+    background-color: #222;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #444;
+}
+
+
+/* Основное содержимое */
+
+main {
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+}
+
+
+/* Таблица */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+th,
+td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d9eaf7;
+}
+
+
+/* Форма */
+
+form {
+    max-width: 600px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+select[multiple] {
+    height: 150px;
+}
+
+fieldset {
+    max-width: 500px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+
+/* Подвал */
+
+.site-footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.site-footer p {
+    margin: 0;
+}
