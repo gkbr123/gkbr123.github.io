@@ -313,18 +313,13 @@
             </p>
 
             <p>
-                <label for="birthdate">Дата рождения:</label><br>
-                <input
+                <label for="birthdate">Дата рождения:</label>
+<input
     type="date"
     id="birthdate"
     name="birthdate"
-    required>
-
-<script>
-    const birthdate = document.getElementById("birthdate");
-    const today = new Date().toISOString().split("T")[0];
-    birthdate.max = today;
-</script>
+    required
+    max="2026-10-01">
             </p>
 
             <fieldset>
@@ -413,6 +408,28 @@
         <p>&copy; 2026 Разработка пользовательского Web-интерфейса</p>
     </div>
 </footer>
+<script>
+    const form = document.querySelector("form");
+    const birthdate = document.getElementById("birthdate");
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const todayString = `${year}-${month}-${day}`;
+    birthdate.max = todayString;
+
+    form.addEventListener("submit", function(event) {
+        if (birthdate.value > todayString) {
+            event.preventDefault();
+            birthdate.setCustomValidity("Дата рождения не может быть в будущем.");
+            birthdate.reportValidity();
+        } else {
+            birthdate.setCustomValidity("");
+        }
+    });
+</script>
 
 </body>
 </html>
