@@ -315,10 +315,16 @@
             <p>
                 <label for="birthdate">Дата рождения:</label><br>
                 <input
-                    type="date"
-                    id="birthdate"
-                    name="birthdate"
-                    required>
+    type="date"
+    id="birthdate"
+    name="birthdate"
+    required>
+
+<script>
+    const birthdate = document.getElementById("birthdate");
+    const today = new Date().toISOString().split("T")[0];
+    birthdate.max = today;
+</script>
             </p>
 
             <fieldset>
