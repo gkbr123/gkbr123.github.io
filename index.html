@@ -318,8 +318,7 @@
     type="date"
     id="birthdate"
     name="birthdate"
-    required
-    max="2026-10-01">
+    required>
             </p>
 
             <fieldset>
@@ -408,18 +407,23 @@
         <p>&copy; 2026 Разработка пользовательского Web-интерфейса</p>
     </div>
 </footer>
-    
+
 <script>
+document.querySelector("form").addEventListener("submit", function(event) {
     const birthdate = document.getElementById("birthdate");
 
+    const selectedDate = new Date(birthdate.value);
     const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
 
-    const todayString = `${year}-${month}-${day}`;
+    today.setHours(0, 0, 0, 0);
+    selectedDate.setHours(0, 0, 0, 0);
 
-    birthdate.max = todayString;
+    if (selectedDate > today) {
+        event.preventDefault();
+        alert("Дата рождения не может быть в будущем!");
+        birthdate.focus();
+    }
+});
 </script>
 
 </body>
