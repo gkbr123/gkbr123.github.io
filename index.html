@@ -408,8 +408,8 @@
         <p>&copy; 2026 Разработка пользовательского Web-интерфейса</p>
     </div>
 </footer>
+    
 <script>
-    const form = document.querySelector("form");
     const birthdate = document.getElementById("birthdate");
 
     const today = new Date();
@@ -418,17 +418,8 @@
     const day = String(today.getDate()).padStart(2, "0");
 
     const todayString = `${year}-${month}-${day}`;
-    birthdate.max = todayString;
 
-    form.addEventListener("submit", function(event) {
-        if (birthdate.value > todayString) {
-            event.preventDefault();
-            birthdate.setCustomValidity("Дата рождения не может быть в будущем.");
-            birthdate.reportValidity();
-        } else {
-            birthdate.setCustomValidity("");
-        }
-    });
+    birthdate.max = todayString;
 </script>
 
 </body>
