@@ -10,12 +10,20 @@ body {
     color: #222;
 }
 
+
+/* Общий контейнер */
+
 .container {
-    width: 960px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
+
+
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   Mobile First
+   ========================= */
 
 
 /* Шапка */
@@ -27,27 +35,29 @@ body {
 }
 
 .header-content {
-    min-height: 120px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    min-height: 180px;
+    gap: 15px;
+    text-align: center;
 }
 
 .logo {
     display: block;
-    flex-shrink: 0;
 }
 
 .logo img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 50%;
 }
 
 .site-title h1 {
     margin: 0;
-    font-size: 26px;
+    font-size: 22px;
 }
 
 .site-title p {
@@ -55,7 +65,7 @@ body {
 }
 
 
-/* Меню */
+/* Навигация */
 
 .site-nav {
     width: 100%;
@@ -64,22 +74,24 @@ body {
 
 .menu {
     display: flex;
-    justify-content: center;
-    gap: 0;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .menu li {
-    margin: 0;
+    width: 100%;
 }
 
 .menu a {
     display: block;
-    padding: 15px 25px;
+    width: 100%;
+    padding: 12px 10px;
     color: white;
+    text-align: center;
     text-decoration: none;
+    border-bottom: 1px solid #555;
 }
 
 .menu a:hover {
@@ -90,39 +102,83 @@ body {
 /* Основное содержимое */
 
 main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     background-color: white;
-    padding-top: 25px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+/*
+    HTML-порядок:
+    1. links
+    2. table
+    3. form
+
+    Визуальный порядок на мобильном:
+    1. table
+    2. links
+    3. form
+*/
+
+#table {
+    order: 1;
+}
+
+#links {
+    order: 2;
+}
+
+#form {
+    order: 3;
 }
 
 section {
-    margin-bottom: 50px;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 h2 {
+    font-size: 22px;
     border-bottom: 2px solid #333;
     padding-bottom: 8px;
 }
 
 
+/* Изображения */
+
+#links img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 /* Таблица */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
 
 table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 caption {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
 }
 
 th,
 td {
     border: 1px solid #333;
-    padding: 10px;
+    padding: 8px;
     text-align: left;
 }
 
@@ -143,7 +199,7 @@ tbody tr:nth-child(even) {
 /* Форма */
 
 form {
-    max-width: 600px;
+    width: 100%;
 }
 
 input[type="text"],
@@ -187,4 +243,105 @@ button {
 
 .site-footer p {
     margin: 0;
+}
+
+
+/* =========================
+   ПЛАНШЕТЫ И ДЕСКТОПЫ
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .container {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+
+    /* Шапка */
+
+    .header-content {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-height: 120px;
+        text-align: left;
+        gap: 25px;
+    }
+
+    .logo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .site-title h1 {
+        font-size: 26px;
+    }
+
+
+    /* Меню */
+
+    .menu {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .menu li {
+        width: auto;
+    }
+
+    .menu a {
+        width: auto;
+        padding: 15px 25px;
+        border-bottom: none;
+    }
+
+
+    /* Основное содержимое */
+
+    main {
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
+
+
+    /*
+        Возвращаем нормальный порядок.
+        На десктопе:
+        1. Список
+        2. Таблица
+        3. Форма
+    */
+
+    #links {
+        order: 1;
+    }
+
+    #table {
+        order: 2;
+    }
+
+    #form {
+        order: 3;
+    }
+
+
+    h2 {
+        font-size: 24px;
+    }
+
+
+    /* Таблица */
+
+    .table-wrapper {
+        overflow-x: visible;
+    }
+
+    table {
+        min-width: 0;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
 }
